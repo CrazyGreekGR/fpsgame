@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Keypad : Interactable
+public class LightSwitch : Interactable
 {
+    private bool lightOpen;
     [SerializeField]
-    private GameObject door;
-    private bool doorOpen;
+    private Light kira;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class Keypad : Interactable
     {
         
     }
+
     protected override void Interact()
     {
-        doorOpen =! doorOpen;
-        door.GetComponent<Animator>().SetBool("isOpened", doorOpen);
+        kira.enabled = !kira.enabled;  
     }
 }
